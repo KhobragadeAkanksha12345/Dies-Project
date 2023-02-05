@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        .container {
+            width: 70%;
+            margin: auto;
+            text-align: center;
+        }
+        .dice {
+            text-align: center;
+            display: inline-block;
+
+         }
+      
+        body{
+            background-color: aqua;
+        }
+        h1{
+            margin: 30px;
+            font-family: 'Lobster', cursive;
+            text-shadow: 5px5px #4d99bc;
+            font-size: 8rem;
+            color: blueviolet;
+            
+        }
+        p{
+            font-size: 3rem;
+            color: #4ECCA3;
+            font-family: 'Lobster', cursive;
+            
+          }
+          img{
+            width: 25%;
+        }
+        
+        footer{
+            margin-top: 7%;
+            color: #875858;
+            text-align: center;
+            font-family: 'Lobster', cursive;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Referesh Me</h1>
+    
+    <div class="dice">
+        <p>Player1</p>
+        <img class="img1" src="images/dice6.png">
+    </div>
+
+    <div class="dice">
+        <p>Player2</p>
+        <img class="img2" src="images/dice6.png">
+      </div>
+  </div>
+
+</body>
+
+<footer>
+    www 🎲 App Brewery 🎲 com
+</footer>
+<script>
+var randomNumber1 = Math.floor(Math.random() * 6) + 1; //1-6
+
+var randomDiceImage = "dice" + randomNumber1 + ".png"; //dice1.png - dice6.png
+
+var randomImageSource = "images/" + randomDiceImage; //images/dice1.png - images/dice6.png
+
+var image1 = document.querySelectorAll("img")[0];
+
+image1.setAttribute("src", randomImageSource);
+
+
+var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+
+var randomImageSource2 = "images/dice" + randomNumber2 + ".png";
+
+document.querySelectorAll("img")[1].setAttribute("src", randomImageSource2);
+//if player 2 win
+    if (randomNumber1 > randomNumber2) {
+  document.querySelector("h1").innerHTML = "🚩 Play 1 Wins!";
+}
+else if (randomNumber2 > randomNumber1) {
+  document.querySelector("h1").innerHTML = "Player 2 Wins! 🚩";
+}
+else {
+  document.querySelector("h1").innerHTML = "Draw!";
+}
+</script>
+</html>
